@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner((System.in));
+        int rounds = in.nextInt();
+        int antonia = 100;
+        int david = 100;
+        
+        for (int i = 0; i < rounds; i++) {
+            int roll1 = in.nextInt();
+            int roll2 = in.nextInt();
+            
+            if (roll1 > roll2) {
+                david = david - roll1;
+            } else if (roll1 < roll2) {
+                antonia = antonia - roll2;
+            }
+        }
+        System.out.println(antonia + "\n" + david);
+    }
+}
