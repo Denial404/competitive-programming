@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner((System.in));
+        int a3 = in.nextInt(); 
+        int a2 = in.nextInt(); 
+        int a1 = in.nextInt(); 
+        int b3 = in.nextInt(); 
+        int b2 = in.nextInt(); 
+        int b1 = in.nextInt(); 
+        
+        int a = (a3 * 3) + (a2 * 2) + a1;
+        int b = (b3 * 3) + (b2 * 2) + b1;
+        
+        if (a > b) {
+            System.out.println("A");
+        } else if (b > a) {
+            System.out.println("B");
+        } else {
+            System.out.println("T");
+        }
+    }
+}
