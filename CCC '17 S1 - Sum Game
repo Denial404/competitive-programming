@@ -1,0 +1,69 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    static Scanner sc = new Scanner();
+    static PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+
+    public static void main(String[] args) throws IOException {
+        int N = sc.nextInt();
+        int s1 = 0, s2 = 0, res = 0;
+        
+        int[] t1 = new int[N+1];
+        int[] t2 = new int[N+1];
+        
+        for (int i = 0; i < N; i++) {
+            t1[i] = sc.nextInt();
+        } 
+        
+        for (int i = 0; i < N; i++) {
+            t2[i] = sc.nextInt();
+        } 
+        
+        for (int i = 0; i < N; i++) {
+            s1 += t1[i];
+            s2 += t2[i];
+            if (s1 == s2) {
+                res = i + 1;
+            }
+        }   
+        out.print(res);
+        out.close();
+    }
+
+    public static class Scanner {
+        static BufferedReader br;
+        static StringTokenizer st;
+
+        public Scanner() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        static String next() throws IOException {
+            while (st == null || !st.hasMoreTokens()) {
+                st = new StringTokenizer(br.readLine().trim());
+            }
+            return st.nextToken();
+        }
+
+        static long nextLong() throws IOException {
+            return Long.parseLong(next());
+        }
+
+        static int nextInt() throws IOException {
+            return Integer.parseInt(next());
+        }
+
+        static double nextDouble() throws IOException {
+            return Double.parseDouble(next());
+        }
+
+        static char nextChar() throws IOException {
+            return next().charAt(0);
+        }
+
+        static String nextLine() throws IOException {
+            return br.readLine();
+        }
+    }
+}
