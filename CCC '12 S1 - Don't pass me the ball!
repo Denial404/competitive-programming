@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    static Scanner sc = new Scanner();
+    static PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+
+    public static void main(String[] args) throws IOException {
+        int j = sc.nextInt() - 1;
+        int s = (j * (j - 1) * (j - 2)) / 6;
+        
+        out.print(s);
+
+        out.close();
+    }
+
+    public static class Scanner {
+        static BufferedReader br;
+        static StringTokenizer st;
+
+        public Scanner() {
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+
+        static String next() throws IOException {
+            while (st == null || !st.hasMoreTokens()) {
+                st = new StringTokenizer(br.readLine().trim());
+            }
+            return st.nextToken();
+        }
+
+        static long nextLong() throws IOException {
+            return Long.parseLong(next());
+        }
+
+        static int nextInt() throws IOException {
+            return Integer.parseInt(next());
+        }
+
+        static double nextDouble() throws IOException {
+            return Double.parseDouble(next());
+        }
+
+        static char nextChar() throws IOException {
+            return next().charAt(0);
+        }
+
+        static String nextLine() throws IOException {
+            return br.readLine();
+        }
+    }
+}
